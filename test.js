@@ -1,5 +1,22 @@
-// main.js
-const os = require('os');
-const { names } = require('./people');
+// modules
+// constants
+    let time = 0;
+// f(x)
 
-console.log(os.platform(), os.homedir(), names);
+
+    //___ what's avaliable on global object
+
+        setTimeout(() => {
+            console.log('it has been 3 seconds')
+        }, 3000); 
+
+        // loops endlessly
+        setInterval(() => {
+            time += 3;
+
+            console.log(time + ' second have passed');
+            
+        }, 3000)
+
+        
+// flow 
