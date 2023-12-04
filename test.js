@@ -1,6 +1,7 @@
 // modules
 // constants
     let time = 0;
+    let  location = __dirname;
 // f(x)
 
 
@@ -11,12 +12,25 @@
         }, 3000); 
 
         // loops endlessly
-        setInterval(() => {
+        // setInterval(() => {
+        //     time += 3;
+
+        //     console.log(time + ' second have passed');
+            
+        // }, 3000)
+
+         
+         let timer = setInterval(() => {
             time += 3;
 
             console.log(time + ' second have passed');
-            
+            if(time >= 9){
+                clearInterval(timer);
+            }
         }, 3000)
 
         
 // flow 
+console.log(__dirname);
+console.log(__filename);
+console.log(location);
