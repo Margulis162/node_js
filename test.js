@@ -1,9 +1,16 @@
 // modules
+
 // constants
     let time = 0;
     let  location = __dirname;
+    // function expression
+    const four = function(){
+        console.log(2+2);
+    }
 // f(x)
-
+    function executor(fun){
+        fun();
+    }
 
     //___ what's avaliable on global object
 
@@ -34,3 +41,4 @@
 console.log(__dirname);
 console.log(__filename);
 console.log(location);
+executor(four);
