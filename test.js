@@ -1,5 +1,5 @@
 // modules
-
+ const counter = require('./counter.js')
 // constants
     let time = 0;
     let  location = __dirname;
@@ -42,3 +42,4 @@ console.log(__dirname);
 console.log(__filename);
 console.log(location);
 executor(four);
+console.log(counter(['strawberries', 'pickles', 'mangos']));
