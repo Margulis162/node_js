@@ -4,12 +4,16 @@
 
         //  build in module which lets to do event listening
  const events = require('events');
- const util = require('util');
- const Person = function(name){
-    this.name = name;
+        // acchaic module
+//  const util = require('util');
+ class Person extends events{
+    constructor(name){
+        super();
+        this.name = name;
+    }
  }
 
- util.inherits(Person, events.EventEmitter);
+//  util.inherits(Person, events.EventEmitter);
 // constants
     const myEmitter = new events.EventEmitter();
     let time = 0;
@@ -62,15 +66,23 @@ console.log(stuff.pi);
 console.log(stuff.adder(2, 3));
 myEmitter.emit('someEvent', 'the event was emitted');
 
-const james = new Person('james');
-const thomas = new Person('thomas');
-const andrew = new Person('andrew'); 
-const people = [james, thomas, andrew];
+// const james = new Person('james');
+// const thomas = new Person('thomas');
+// const andrew = new Person('andrew'); 
+// const people = [james, thomas, andrew];
 
-people.forEach(function(person){
-    person.on('speak', function(msg){
-        console.log(person.name + ' said: ' + msg);
-    });
-})
+// people.forEach(function(person){
+//     person.on('speak', function(msg){
+//         console.log(person.name + ' said: ' + msg);
+//     });
+// })
 
-james.emit('speak', 'hello people!');
+// james.emit('speak', 'hello people!');
+const john = new Person('John Doe');
+john.on('greet', (msg) => {
+    console.log(`${john.name} says: ${msg}`);
+  });
+
+
+john.emit('greet', 'Hey there!');
+
